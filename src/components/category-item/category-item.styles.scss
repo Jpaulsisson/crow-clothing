@@ -8,6 +8,8 @@
   border: 1px solid black;
   margin: 0 7.5px 15px;
   overflow: hidden;
+  font-family: var(--mainFont);
+  font-weight: 300;
 
   &:hover {
     cursor: pointer;
@@ -49,8 +51,7 @@
     align-items: center;
     justify-content: center;
     border: 1px solid black;
-    background-color: white;
-    opacity: 0.7;
+    background-color: rgba(200, 248, 224, 0.6);
     position: absolute;
 
     h2 {
@@ -63,7 +64,7 @@
     p {
       font-weight: lighter;
       font-size: 16px;
-      color: #4a4a4a;
+      color: #4a4a4a;      
     }
   }
 }

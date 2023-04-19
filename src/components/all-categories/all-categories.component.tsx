@@ -9,7 +9,7 @@ function AllCategories() {
     {
       id: 1,
       title: 'Hats',
-      imageUrl: 'resources/taylor-brandon-CNJNvwvhnMc-unsplash.jpg'
+      imageUrl: 'resources/best-hats.jpeg'
     },
     {
       id: 2,

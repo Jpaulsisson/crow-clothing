@@ -1,47 +1,25 @@
-import { useState } from 'react'
-import './App.css'
-import './categories.styles.scss';
-import AllCategories from './components/all-categories/all-categories.component';
-import CategoryItem from './components/category-item/category-item.component';
+import { Routes, Route } from 'react-router-dom';
+import Home from './routes/home/home.component';
+import Nav from './routes/nav/nav.component';
+import SignIn from './routes/sign-in/sign-in.component';
+import './App.css';
+
+const Shop = () => {
+  return <h1>I'm a shop page</h1>;
+};
 
 const App = () => {
-
-  const categories = [
-    {
-      id: 1,
-      title: 'Hats',
-      imageUrl: 'resources/taylor-brandon-CNJNvwvhnMc-unsplash.jpg'
-    },
-    {
-      id: 2,
-      title: 'Jackets',
-      imageUrl: 'resources/alternate-jacket.jpeg'
-    },
-    {
-      id: 3,
-      title: 'Sneakers',
-      imageUrl: 'resources/shoes.jpeg'
-    },
-    {
-      id: 4,
-      title: `Women's`,
-      imageUrl: 'resources/womens.jpeg'
-    },
-    {
-      id: 5,
-      title: `Men's`,
-      imageUrl: 'resources/mens.jpeg'
-    },
-    
-  ];
-
   return (
     <>
-      <AllCategories />
+      <Routes>
+        <Route path="/" element={<Nav />}>
+          <Route index element={<Home />} />
+          <Route path="shop" element={<Shop />} />
+          <Route path="signIn" element={<SignIn />} />
+        </Route>
+      </Routes>
     </>
-  )
+  );
+};
 
-
-}
-
-export default App
+export default App;

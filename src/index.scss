@@ -1,0 +1,15 @@
+:root {
+  color-scheme: dark light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: var(--mainFont);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(241, 231, 212);
+}
