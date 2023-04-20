@@ -5,7 +5,10 @@ import {
   signInWithRedirect,
   signInWithPopup,
   GoogleAuthProvider,
-  createUserWithEmailAndPassword
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged
 } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
@@ -17,6 +20,8 @@ const firebaseConfig = {
   messagingSenderId: '1095878926216',
   appId: '1:1095878926216:web:3992af95f090ae16a2243d',
 };
+
+export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback)
 
 const app = initializeApp(firebaseConfig);
 
@@ -31,6 +36,14 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
 
     return await createUserWithEmailAndPassword(auth, email, password);
   }
+
+export const signInAuthUserWithEmailAndPassword = async (email, password) => {
+    if (!email || !password) return;
+
+    return await signInWithEmailAndPassword(auth, email, password);
+  }
+
+export const signOutUser = async () => await signOut(auth);
 
 export const auth = getAuth();
 export const signInWithGooglePopup = () =>

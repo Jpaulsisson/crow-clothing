@@ -8,14 +8,14 @@ import FormInput from '../form-input/form-input.component';
 import '../sign-up-form/sign-up-form.styles.scss';
 import Button from '../button/button.component';
 
-
-function SignUpForm() {
   const defaultFormFields = {
     displayName: '',
     email: '',
     password: '',
     confirmPassword: '',
   };
+
+function SignUpForm() {
 
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
@@ -54,6 +54,7 @@ function SignUpForm() {
   return (
     <div className='sign-up-container'>
       <h2>New to Crow???</h2>
+      <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
